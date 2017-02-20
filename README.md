@@ -2,6 +2,7 @@
 Game engine implemented in the Introduction to Game Development course
 
 Incremental order:
+
 1. Trabalho 1
 2. Exercício 1
 3. Exercício 2
