@@ -10,7 +10,7 @@ DOCDIR = doc
 LIB = -lSDL -lSDL_image
 MOD = 
 OBJ = $(OBJDIR)/SDLBase.o $(OBJDIR)/Sprite.o $(OBJDIR)/GameManager.o $(OBJDIR)/main.o $(OBJDIR)/Planet.o $(OBJDIR)/configfile.o $(OBJDIR)/mexception.o
-EXE = trabalho_01
+EXE = exercicio_01
 
 all: build
 
