@@ -1,0 +1,11 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00\x16\x00t\x00r\x00a\x00b\x00a\x00l\x00h\x00o\x00_\x000\x001)
+
+[CMake]
+BuildDirs=/home/matheus/Documents/C_C++/C++/IDJ/trabalho_01/build
+CMakeDir=/usr/share/cmake-2.8/Modules
+Current CMake Binary=file:///usr/bin/cmake
+CurrentBuildDir=file:///home/matheus/Documents/C_C++/C++/IDJ/trabalho_01/build
+CurrentBuildType=Debug
+CurrentInstallDir=
+ProjectRootRelative=./

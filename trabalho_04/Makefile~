@@ -1,0 +1,51 @@
+BINDIR = bin
+INCDIR = include
+MODDIR = mod
+OBJDIR = obj
+SRCDIR = src
+DOCDIR = doc
+
+SDLDIR = /usr/include/SDL
+
+ERRLOG = ErrorLog.txt
+
+CXXFLAGS = -ansi -pedantic -Wall -Wextra -g -I $(INCDIR)/ -I $(SDLDIR)/
+
+LIB = -lSDL -lSDL_image -lSDL_gfx -lSDL_ttf -lSDL_mixer
+EXE = trabalho_04
+
+OBJ0 = $(MODDIR)/configfile.o $(MODDIR)/linearalgebra.o $(MODDIR)/simplestructures.o
+OBJ1 = $(OBJ0) $(OBJDIR)/main.o $(OBJDIR)/SDLBase.o $(OBJDIR)/Sprite.o $(OBJDIR)/Animation.o
+OBJ2 = $(OBJ1) $(OBJDIR)/TileSet.o $(OBJDIR)/TileMap.o $(OBJDIR)/GameObject.o
+OBJ3 = $(OBJ2) $(OBJDIR)/Camera.o $(OBJDIR)/Geometry.o $(OBJDIR)/InputManager.o
+OBJ4 = $(OBJ3) $(OBJDIR)/Button.o $(OBJDIR)/StateManager.o $(OBJDIR)/Planet.o
+OBJ5 = $(OBJ4) $(OBJDIR)/FollowerObject.o $(OBJDIR)/AccObject.o $(OBJDIR)/Text.o
+OBJ6 = $(OBJ5) $(OBJDIR)/Audio.o $(OBJDIR)/Timer.o $(OBJDIR)/State.o
+OBJ7 = $(OBJ6) $(OBJDIR)/GameStates.o
+
+OBJ  = $(OBJ7)
+
+all: $(OBJ)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	g++ $(CXXFLAGS) -c $< -o $@
+
+link:
+	g++ $(CXXFLAGS) $(MOD) $(OBJ) -o $(BINDIR)/$(EXE) $(LIB)
+
+build: $(OBJ) link
+
+run: build
+	$(BINDIR)/$(EXE) -fps
+
+clean:
+	rm -rf $(BINDIR)/$(EXE) $(OBJDIR)/* $(ERRLOG)
+
+dox:
+	doxygen
+
+doxclean:
+	rm -rf $(DOCDIR)/html $(DOCDIR)/latex
+
+gdb:
+	gdb $(BINDIR)/$(EXE)
